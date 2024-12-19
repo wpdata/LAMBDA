@@ -5,18 +5,8 @@ class Inspector:
 
     def __init__(self, api_key , model="gpt-3.5-turbo-1106", base_url=''):
         self.client = openai.OpenAI(api_key=api_key, base_url=base_url)
-        # if base_url and model == "llama3":
-        #     self.client = openai.OpenAI(api_key="none", base_url=base_url)
-        # elif base_url and model == "qwen1.5":
-        #     self.client = openai.OpenAI(api_key="none", base_url=base_url)
-        # elif base_url and model == "qwen2":
-        #     self.client = openai.OpenAI(api_key="none", base_url=base_url)
-        # else:
-        #     self.client = openai.OpenAI(api_key=openai_api_key)
         self.model = model
-        self.messages = [
-            # {"role": "system", "content": code_inspect}
-        ]
+        self.messages = []
         self.function_repository = {}
 
     def add_functions(self, function_lib: dict) -> None:
