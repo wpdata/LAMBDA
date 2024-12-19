@@ -107,16 +107,15 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgements
 
-We thank the contributors and the community for their support and feedback.
+Thank the contributors and the communities for their support and feedback.
 
 ---
 
-> LAMBDA is an open-source project aimed at making data analysis more accessible, effective, and efficient for individuals from diverse backgrounds.
+> If you find our work useful in your research, consider citing our paper by:
 
 
 
-If you find our work useful in your research, consider citing our paper by:
-```
+```bash
  @article{sun2024lambda,
           title={LAMBDA: A Large Model Based Data Agent},
           author={Sun, Maojun and Han, Ruijian and Jiang, Binyan and Qi, Houduo and Sun, Defeng and Yuan, Yancheng and Huang, Jian},
