@@ -1,7 +1,6 @@
 from knw import knw
 import textwrap
 
-# @knowledge_injection('nearest_correlation_matrix')
 class nn_networks(knw):
     def __init__(self):
         super().__init__()
@@ -11,6 +10,7 @@ class nn_networks(knw):
         self.runnable_function = 'runnable'
         self.test_case = 'case_nn_networks'
         self.mode = 'core'
+
     def core(self):
         case = """
         args = argparse.ArgumentParser()

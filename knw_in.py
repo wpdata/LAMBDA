@@ -5,7 +5,6 @@ from sentence_transformers import SentenceTransformer, util
 import numpy as np
 # from knw import KNW_INJECTION, knowledge_injection
 from prompt_engineering.prompts import PMT_KNW_IN_CORE, PMT_KNW_IN_FULL
-# from config import rag_mode
 from knowledge_integration.nearest_correlation_matrix import nearest_correlation_matrix
 from knowledge_integration.nn_network import nn_networks
 from knowledge_integration.pami import pattern_mining

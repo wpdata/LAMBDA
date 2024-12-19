@@ -1,32 +1,8 @@
-"""
-Knowledge Integration
-Attributes:
-    knw (dict): Dictionary containing the knowledge integration information.
-    name (str): Name of the knowledge integration.
-"""
-
-from utils.logger import logger
 import inspect
 import textwrap
 
 
 KNW_INJECTION = {}
-def knowledge_injection(name, allow_overwrite=False):
-
-    def decorator(knw):
-        if name in KNW_INJECTION:
-            if allow_overwrite:
-                logger.warning(f'Knowledge `{name}` already exists! Overwriting with class {knw}.')
-            else:
-                raise ValueError(f'Knowledge `{name}` already exists! Please ensure that the tool name is unique.')
-        if knw.name and (knw.name != name):
-            raise ValueError(f'{knw.__name__}.name="{knw.name}" conflicts with @knowledge_injection(name="{name}").')
-        knw.name = name
-        KNW_INJECTION[name] = knw
-
-        return knw
-
-    return decorator
 
 class knw:
     def __init__(self):
@@ -36,12 +12,7 @@ class knw:
         self.test_case = 'test_case'
         self.runnable_function = 'runnable_function'
         self.mode = 'full'
-        # self.internal_function = 'internal_function'
-        # self.fixed_function = 'fixed_function'
         self.method_code = {}
-        # self.get_all_function()
-    # def entrance_function(self):
-    #     print("Entrance function of the knowledge integration.")
 
     def get_core_function(self):
         """
@@ -106,38 +77,20 @@ class knw:
         return self.method_code
 
     def remove_outer_indentation(code_str):  # delete the outer indentation
-        # 按行分割字符串
         lines = code_str.splitlines()
-
-        # 过滤掉空行
         non_empty_lines = [line for line in lines if line.strip()]
 
         if not non_empty_lines:
-            return code_str  # 如果没有非空行，返回原字符串
-
-        # 找到最小缩进
+            return code_str
         min_indent = min(len(line) - len(line.lstrip()) for line in non_empty_lines)
 
-        # 去掉最小缩进
         aligned_lines = [line[min_indent:] for line in lines]
 
-        # 重新组合为字符串
         return '\n'.join(aligned_lines)
 
-# def get_function_code(function_name):
-#     function = globals().get(function_name)
-#     if function is None:
-#         logger.warning("Method not found.")
-#     else:
-#         return inspect.getsource(function)
-# def instantiate_subclasses(parent_class):
-#     instances = []
-#     for subclass in parent_class.__subclasses__():
-#         instances.append(subclass())
-#     return instances
 
 if __name__ == '__main__':
     kwn = knw()
-    # print(kwn.get_entrance_function()) #缩进问题
+    # print(kwn.get_entrance_function()) #todo : problem in indent
     print(kwn.get_all_function_code())
     # print(instantiate_subclasses(knw))
