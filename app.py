@@ -191,4 +191,4 @@ with gr.Blocks(theme=gr.themes.Soft(), css='front_end/css.css', js='front_end/ja
     #demo.load(fn=my_app.load_chat_history, inputs=None, outputs=chatbot)
 
 if __name__ == '__main__':
-    demo.launch(server_name="0.0.0.0",server_port=8000, debug=True, share=True)
+    demo.launch(server_name="0.0.0.0",server_port=8001, debug=True, share=True)
