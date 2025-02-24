@@ -1,6 +1,5 @@
 import torch
 import sys
-sys.path.append('/Users/stephensun/Desktop/pypro/LAMBDA/knowledge_integration')
 from sentence_transformers import SentenceTransformer, util
 import numpy as np
 # from knw import KNW_INJECTION, knowledge_injection
