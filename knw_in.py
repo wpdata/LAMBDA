@@ -62,3 +62,4 @@ def retrieval_knowledge(instruction, kernel): # return code_snaps and mode: 'ful
         return format_code_snaps(best_knw_object, kernel)
     else:
         return None
+
