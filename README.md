@@ -28,6 +28,11 @@ git clone https://github.com/Stephen-SMJ/LAMBDA.git
 cd LAMBDA
 ```
 
+Then, install the required packages:
+```bash
+pip install -r requirements.txt
+```
+
 Then, we recommend creating a [Conda](https://docs.conda.io/en/latest/) environment for this project and install the dependencies by following commands:
 ```bash
 conda create -n lambda python=3.10
