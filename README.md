@@ -96,6 +96,12 @@ The performance of LAMBDA in solving data science problems is demonstrated in se
 - Replace Gradio with other GUI frameworks.
 
 
+## Related Works
+If you are interested in Data Agent, you can take a look at :
+- Our survey paper [[A Survey on Large Language Model-based Agents for Statistics and Data Science]](https://www.arxiv.org/pdf/2412.14222)
+- and a reading list: [[Paper List of LLM-based Data Science Agents]](https://github.com/Stephen-SMJ/Reading-List-of-Large-Language-Model-Based-Data-Science-Agent)
+
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
@@ -118,6 +124,13 @@ Thank the contributors and the communities for their support and feedback.
           author={Sun, Maojun and Han, Ruijian and Jiang, Binyan and Qi, Houduo and Sun, Defeng and Yuan, Yancheng and Huang, Jian},
           journal={arXiv preprint arXiv:2407.17535},
           year={2024}
+}
+
+@article{sun2024survey,
+  title={A Survey on Large Language Model-based Agents for Statistics and Data Science},
+  author={Sun, Maojun and Han, Ruijian and Jiang, Binyan and Qi, Houduo and Sun, Defeng and Yuan, Yancheng and Huang, Jian},
+  journal={arXiv preprint arXiv:2412.14222},
+  year={2024}
 }
 ```
 ## Star History
