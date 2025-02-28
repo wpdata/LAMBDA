@@ -127,10 +127,10 @@ Thank the contributors and the communities for their support and feedback.
 }
 
 @article{sun2024survey,
-  title={A Survey on Large Language Model-based Agents for Statistics and Data Science},
-  author={Sun, Maojun and Han, Ruijian and Jiang, Binyan and Qi, Houduo and Sun, Defeng and Yuan, Yancheng and Huang, Jian},
-  journal={arXiv preprint arXiv:2412.14222},
-  year={2024}
+          title={A Survey on Large Language Model-based Agents for Statistics and Data Science},
+          author={Sun, Maojun and Han, Ruijian and Jiang, Binyan and Qi, Houduo and Sun, Defeng and Yuan, Yancheng and Huang, Jian},
+          journal={arXiv preprint arXiv:2412.14222},
+          year={2024}
 }
 ```
 ## Star History
