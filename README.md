@@ -1,4 +1,8 @@
-# [LAMBDA](https://www.polyu.edu.hk/ama/cmfai/lambda.html) - Multi-Agent Data Analysis System
+# LAMBDA - Multi-Agent Data Analysis System
+[![Docs](https://img.shields.io/badge/Docs-Online-blue)](https://ama-cmfai.github.io/LAMBDA-Docs/#/)
+[![Project](https://img.shields.io/badge/Project-Webpage-brightgreen)](https://www.polyu.edu.hk/ama/cmfai/lambda.html)
+[![Paper](https://img.shields.io/badge/Paper-arXiv-red)](https://arxiv.org/pdf/2407.17535)
+
 <body>
 <!-- <img src="https://github.com/user-attachments/assets/df454158-79e4-4da4-ae03-eb687fe02f16" style="width: 80%"> -->
 <!-- <p align="center">
@@ -7,8 +11,11 @@
 
 ![lambda_mix](https://github.com/user-attachments/assets/db5574aa-9441-4c9d-b44d-3b225d11e0cc)
 
-
 We introduce **LAMBDA**, a novel open-source, code-free multi-agent data analysis system that harnesses the power of large models. LAMBDA is designed to address data analysis challenges in complex data-driven applications through the use of innovatively designed data agents that operate iteratively and generatively using natural language.
+
+## News
+- [Docs site](https://ama-cmfai.github.io/LAMBDA-Docs/#/) is available!
+- We are recruiting engineers and research assistants with experience in AI Agent development.
 
 ## Key Features
 
@@ -52,11 +59,11 @@ ipython kernel install --name lambda --user
 #================================================================================================
 #                                       Config of the LLMs
 #================================================================================================
-conv_model : "gpt-4o-mini" # the conversation model
-programmer_model : "gpt-4o-mini"
-inspector_model : "gpt-4o-mini"
-api_key : ""
-base_url_conv_model : 'https://api.openai.com/v1'
+conv_model : "gpt-4.1-mini" # Choose the model you want to use. We highly recommned using the advanced model.
+programmer_model : "gpt-4.1-mini" 
+inspector_model : "gpt-4.1-mini"
+api_key : "sk-xxxxxxx" # The API Keys you buy.
+base_url_conv_model : 'https://api.openai.com/v1' # The base url from the provider.
 base_url_programmer : 'https://api.openai.com/v1'
 base_url_inspector : 'https://api.openai.com/v1'
 
@@ -65,13 +72,14 @@ base_url_inspector : 'https://api.openai.com/v1'
 #                                       Config of the system
 #================================================================================================
 streaming : True
-project_cache_path : "cache/conv_cache/" # local cache path
+project_cache_path : "cache/conv_cache/" # Local cache path
 max_attempts : 5 # The max attempts of self-correcting
-max_exe_time: 18000 # max time for the execution
+max_exe_time: 18000 # The maximum time for the execution
 
 #knowledge integration
-retrieval : False # whether to start a knowledge retrieval. If you don't create your knowledge base, you should set it to False
+retrieval : False # Whether to start a knowledge retrieval. If you don't create your knowledge base, you should set it to False
 ```
+
 
 Finally, run the following command to start the LAMBDA with GUI:
 ```bash
@@ -120,11 +128,19 @@ Thank the contributors and the communities for their support and feedback.
 
 
 ```bash
- @article{sun2024lambda,
-  title={LAMBDA: A Large Model Based Data Agent},
-  author={Sun, Maojun and Han, Ruijian and Jiang, Binyan and Qi, Houduo and Sun, Defeng and Yuan, Yancheng and Huang, Jian},
-  journal={arXiv preprint arXiv:2407.17535},
-  year={2024}
+@article{sun2024lambda,
+        author = {Sun Maojun and Ruijian Han and Binyan Jiang and Houduo Qi and Defeng Sun and Yancheng Yuan and Jian Huang and},
+        title = {LAMBDA: A Large Model Based Data Agent},
+        journal = {Journal of the American Statistical Association},
+        volume = {0},
+        number = {ja},
+        pages = {1--20},
+        year = {2025},
+        publisher = {ASA Website},
+        doi = {10.1080/01621459.2025.2510000},
+        URL = {https://doi.org/10.1080/01621459.2025.2510000},
+        eprint = {https://doi.org/10.1080/01621459.2025.2510000}
+
 }
 
 @article{sun2024survey,
