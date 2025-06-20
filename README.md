@@ -24,7 +24,7 @@ We introduce **LAMBDA**, a novel open-source, code-free multi-agent data analysi
 First, clone the repository.
 
 ```bash
-git clone https://github.com/Stephen-SMJ/LAMBDA.git
+git clone https://github.com/AMA-CMFAI/LAMBDA.git
 cd LAMBDA
 ```
 
