@@ -12,6 +12,7 @@ from kernel import *
 from lambda_utils import *
 from display import *
 from pathlib import Path
+from utils.utils import *
 # warnings.filterwarnings("ignore")
 
 
@@ -116,8 +117,9 @@ class Conversation():
         for item in self.chat_history:
             formatted_chat.append({"role": "user", "content": item[0]})
             formatted_chat.append({"role": "assistant", "content": item[1]})
-        report_pmt = Academic_Report.replace('s{figures}',str(self.figure_list))
-        self.messages = formatted_chat + [{"role": "user", "content": report_pmt}]
+        report_pmt = Academic_Report.replace('s{figures}',
+                                             str(self.figure_list)) + '\nNow, you should generate a report according to the following chat history:\n' # todo: figure_list should use global address.
+        self.messages = [{"role": "user", "content": report_pmt}] + formatted_chat
         report = self.call_chat_model().choices[0].message.content
         self.messages.append({"role": "assistant", "content": report})
         mkd_path = os.path.join(self.session_cache_path, 'report.md')
@@ -149,16 +151,14 @@ class Conversation():
 
 
     def clear(self):
+        os.removedirs(self.session_cache_path)
         self.messages = []
         self.programmer.clear()
         self.inspector.clear()
         self.kernel.shutdown()
         del self.kernel
-        self.kernel = CodeKernel()
+        self.kernel = CodeKernel(session_cache_path=self.session_cache_path, max_exe_time=self.config['max_exe_time'])
         self.my_data_cache = None
-        self.my_data_description = None
-        self.oss_dir = None
-        self.session_cache_path = None
 
     def stream_workflow(self, chat_history, code=None) -> object:
         try:
@@ -197,6 +197,13 @@ class Conversation():
                     self.add_programmer_msg({"role": "assistant", "content": prog_response2})
                     chat_history[-1][1] += f"{link_info}" if display else ''
                     yield chat_history
+
+                    #show suggestion
+                    suggests = extract_suggestion(prog_response2)
+                    if suggests:
+                        suggestions = display_suggestions(suggests)
+                        chat_history[-1][1] += suggestions
+                        yield chat_history
 
                 else:
                     self.error_count += 1
@@ -245,12 +252,12 @@ class Conversation():
                     self.add_programmer_msg({"role": "assistant", "content": prog_response2})
                     chat_history[-1][1] += f"{link_info}" if display else ''
                     yield chat_history
-            else:
-                chat_history[-1][1] += "\nNo code detected or code is not python code."  # todo : delete printing this?
-                yield chat_history
-                final_response = prog_response1_content + "\nNo code detected or code is not python code."
-                if self.programmer.messages[-1]["role"] == "assistant":
-                    self.programmer.messages[-1]["content"] = final_response
+            # else:
+            #     chat_history[-1][1] += "\nNo code detected or code is not python code."  # todo : delete printing this?
+            #     yield chat_history
+            #     final_response = prog_response1_content + "\nNo code detected or code is not python code."
+            #     if self.programmer.messages[-1]["role"] == "assistant":
+            #         self.programmer.messages[-1]["content"] = final_response
 
         except Exception as e:
             chat_history[-1][1] += "\nSorry, there is an error in the program, please try again."

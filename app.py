@@ -9,6 +9,8 @@ import time
 from conversation import Conversation
 from prompt_engineering.prompts import *
 import yaml
+from front_end.js import js
+from front_end.css import css
 
 class app():
     def __init__(self, config_path='config.yaml'):
@@ -98,13 +100,12 @@ class app():
 
 my_app = app()
 
-with gr.Blocks(theme=gr.themes.Soft(), css='front_end/css.css', js='front_end/javascript.js') as demo:
-    chatbot = gr.Chatbot(value=my_app.conv.chat_history, height=600, label="LAMBDA",
-                         avatar_images=["front_end/user.jpg", "front_end/lambda.jpg"], show_copy_button=True)
+with gr.Blocks(theme=gr.themes.Soft(), css=css, js=js) as demo:
+    chatbot = gr.Chatbot(value=my_app.conv.chat_history, height=600, label="LAMBDA", show_copy_button=True)
     with gr.Group():
         with gr.Row():
             upload_btn = gr.UploadButton(label="Upload Data", file_types=["csv", "xlsx"], scale=1)
-            msg = gr.Textbox(show_label=False, placeholder="Sent message to LLM", scale=6)
+            msg = gr.Textbox(show_label=False, placeholder="Sent message to LLM", scale=6, elem_id="chatbot_input")
             submit = gr.Button("Submit", scale=1)
     with gr.Row():
         board = gr.Button(value="Show/Update DataFrame", elem_id="df_btn", elem_classes="df_btn")

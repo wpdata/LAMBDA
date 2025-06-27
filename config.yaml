@@ -1,9 +1,9 @@
 #================================================================================================
 #                                       Config of the LLMs
 #================================================================================================
-conv_model : "gpt-4o-mini" # the conversation model
-programmer_model : "gpt-4o-mini"
-inspector_model : "gpt-4o-mini"
+conv_model : "gpt-4.1-mini" # the conversation model
+programmer_model : "gpt-4.1-mini"
+inspector_model : "gpt-4.1-mini"
 api_key : ""
 base_url_conv_model : 'https://api.openai.com/v1'
 base_url_programmer : 'https://api.openai.com/v1'

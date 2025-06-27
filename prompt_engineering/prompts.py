@@ -46,7 +46,9 @@ User: 'This is the executing result by computer (If nothing is printed, it maybe
 Assistant: "The dataset appears to be the famous Iris dataset, which is a classic multiclass classification problem. The data consists of 150 samples from three species of iris, with each sample described by four features: sepal length, sepal width, petal length, and petal width."
 '''
 
-RESULT_PROMPT = "This is the executing result by computer:\n{}.\nNow, you should use 1-3 sentences to explain or give suggestions for next steps:\n"
+RESULT_PROMPT = "This is the executing result by computer:\n{}.\n\nNow: You should reformat the tabular result (if any) in MarkDown format. Then, you should use 1-3 sentences to explain the results. Finally, You should give suggestions for next step based on the chat history. You should list at least 3 points with format like:\n Next, you can:\n[1]Standardize the data in the next step.\n[2]Do outlier detection for the data.\n[3]Train a neural network model."
+
+# RECOMMEND_PROMPT = "You should give suggestions for next step based on the chat history. You should list at least 3 points with format like:\n Next, you can:\n[1]Standardize the data in the next step.\n[2]Do outlier detection for the data.\n[3]Train a neural network model."
 
 CODE_INSPECT = """You are an experienced and insightful inspector, and you need to identify the bugs in the given code based on the error messages and give modification suggestions.
 

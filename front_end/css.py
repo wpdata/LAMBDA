@@ -1,3 +1,4 @@
+css = """
 h1 {margin: 20px auto; text-align: center;}
 img {max-height: 400px !important; max-width: 50vw !important;}
 .suggestion-btn {
@@ -24,4 +25,4 @@ img {max-height: 400px !important; max-width: 50vw !important;}
         background-color: #e0e0e0;
         transition-duration: 0.05s; 
 }
-/*footer {display: none !important}
+"""

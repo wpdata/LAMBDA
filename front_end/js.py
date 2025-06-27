@@ -1,3 +1,5 @@
+js = """
+() => {
 var container = document.createElement('div');
 container.id = 'gradio-animation';
 container.style.fontSize = '2em';
@@ -5,7 +7,7 @@ container.style.fontWeight = 'bold';
 container.style.textAlign = 'center';
 container.style.marginBottom = '20px';
 
-var text = 'Welcome to LAMBDA! Easy Data Analytics!';
+var text = 'Welcome to LAMBDA! Easy Data Analysis!';
 for (var i = 0; i < text.length; i++) {
     (function (i) {
         setTimeout(function () {
@@ -71,4 +73,5 @@ observer.observe(document.body, {
     childList: true,
     subtree: true,
 });
-
+}
+"""
