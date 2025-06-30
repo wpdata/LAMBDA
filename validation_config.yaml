@@ -1,0 +1,68 @@
+#================================================================================================
+#                                    LAMBDA 系统验证配置
+#================================================================================================
+
+# 测试数据路径
+test_data_path: "validation_data/"
+
+# 输出结果路径  
+output_path: "validation_results/"
+
+# 测试超时时间（秒）
+timeout: 300
+
+# LAMBDA 系统配置文件路径
+lambda_config: "config.yaml"
+
+# 测试设置
+test_settings:
+  # 是否生成详细日志
+  verbose_logging: true
+  
+  # 是否保存中间结果
+  save_intermediate: true
+  
+  # 是否生成可视化图表
+  generate_charts: true
+  
+  # 并发测试数量（设为1避免资源冲突）
+  max_concurrent_tests: 1
+
+# 评估标准
+evaluation_criteria:
+  # 成功率阈值
+  success_rate_threshold: 0.8
+  
+  # 平均得分阈值
+  average_score_threshold: 70
+  
+  # 代码生成率阈值
+  code_generation_threshold: 0.9
+  
+  # 执行时间阈值（秒）
+  execution_time_threshold: 60
+
+# 测试数据生成设置
+test_data_config:
+  # 随机种子
+  random_seed: 42
+  
+  # 基础数据集大小
+  basic_dataset_size: 100
+  
+  # 时间序列长度
+  timeseries_length: 365
+  
+  # 缺失值比例
+  missing_value_ratio: 0.2
+
+# 报告设置
+report_config:
+  # 报告格式
+  formats: ["json", "markdown", "html"]
+  
+  # 是否包含详细错误信息
+  include_error_details: true
+  
+  # 是否生成图表
+  include_charts: true

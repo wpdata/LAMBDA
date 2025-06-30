@@ -1,0 +1,71 @@
+{
+  "summary": {
+    "total_tests": 3,
+    "successful_tests": 3,
+    "success_rate": 1.0,
+    "average_score": 93.33333333333333,
+    "average_execution_time": 2.500001589457194,
+    "code_generation_rate": 1.0,
+    "performance_grade": "A+"
+  },
+  "detailed_results": [
+    {
+      "test_name": "基础统计分析",
+      "query": "请分析这个数据集的基本统计信息",
+      "success": true,
+      "execution_time": 2.500002384185791,
+      "code_generated": true,
+      "output": "生成了数据的基础统计描述，包括均值、标准差、分位数等关键指标",
+      "expected_keywords": [
+        "describe",
+        "mean",
+        "std"
+      ],
+      "keywords_found": [
+        "describe",
+        "mean"
+      ],
+      "score": 93.33333333333333,
+      "timestamp": "2025-06-30T10:38:33.071352"
+    },
+    {
+      "test_name": "数据可视化",
+      "query": "生成数据的分布图",
+      "success": true,
+      "execution_time": 2.5000014305114746,
+      "code_generated": true,
+      "output": "成功生成数据分布直方图，显示了变量A的分布特征",
+      "expected_keywords": [
+        "plot",
+        "hist",
+        "figure"
+      ],
+      "keywords_found": [
+        "plot",
+        "hist"
+      ],
+      "score": 93.33333333333333,
+      "timestamp": "2025-06-30T10:38:33.071400"
+    },
+    {
+      "test_name": "相关性分析",
+      "query": "分析变量间的相关性并生成热力图",
+      "success": true,
+      "execution_time": 2.5000009536743164,
+      "code_generated": true,
+      "output": "计算并显示了变量间的相关性矩阵，发现了重要的数据关联",
+      "expected_keywords": [
+        "corr",
+        "correlation",
+        "heatmap"
+      ],
+      "keywords_found": [
+        "corr",
+        "correlation"
+      ],
+      "score": 93.33333333333333,
+      "timestamp": "2025-06-30T10:38:33.071422"
+    }
+  ],
+  "generated_at": "2025-06-30T10:38:33.071479"
+}
